@@ -127,6 +127,80 @@ html {
 .buttons {
   grid-area: buttons;
 }
+
+.ctn-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -2rem;
+}
+
+.button {
+  border-radius: 0.75rem;
+  border: none;
+  width: 9rem;
+  height: 5rem;
+  margin: 2rem;
+  transition: color, 2s, ease-in-out, 0.5s;
+  transition: background-color, 2s, ease-in-out, 0.5s;
+}
+
+.first-button {
+  background-color: var(--font-color-dark);
+  color: var(--background-color-light);
+}
+
+.first-button:hover {
+  border: solid var(--font-color-dark) 0.25rem;
+  background-color: transparent;
+  color: var(--font-color-dark);
+}
+
+.second-button {
+  background-color: var(--font-color-light);
+  color: var(--font-color-dark);
+}
+
+.second-button:hover {
+  border: solid var(--font-color-light) 0.25rem;
+  background-color: transparent;
+  color: var(--font-color-light);
+}
+
+.third-button {
+  background-color: var(--font-color-accent-warm);
+  color: var(--background-color-light);
+}
+.third-button:hover {
+  border: solid var(--font-color-accent-warm) 0.25rem;
+  background-color: transparent;
+  color: var(--font-color-accent-warm);
+}
+
+.fourth-button {
+  background-color: var(--font-color-accent-medium);
+  color: var(--background-color-light);
+}
+
+.fourth-button:hover {
+  border: solid var(--font-color-accent-medium) 0.25rem;
+  background-color: transparent;
+  color: var(--font-color-accent-medium);
+}
+
+.fifth-button {
+  background-color: var(--font-color-accent-cold);
+  color: var(--background-color-light);
+}
+
+.fifth-button:hover {
+  border: solid var(--font-color-accent-cold) 0.25rem;
+  background-color: transparent;
+  color: var(--font-color-accent-cold);
+}
+
 .icons {
   grid-area: icons;
 }
