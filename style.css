@@ -1,9 +1,46 @@
-html {
-  font-family: Lato, sans-serif;
-  box-sizing: border-box;
+/* lato-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/lato-v24-latin/lato-v24-latin-regular.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* lato-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Lato";
+  font-style: italic;
+  font-weight: 400;
+  src: url(./fonts/lato-v24-latin/lato-v24-latin-italic.woff2) format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
+/* noto-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/noto-sans-v35-latin/noto-sans-v35-latin-regular.woff2)
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url(./fonts/noto-sans-v35-latin/noto-sans-v35-latin-italic.woff2)
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+html {
+  font-family: var(--font-sans-1), sans-serif;
+  box-sizing: border-box;
   font-size: 20px;
-  color: #161b33;
+  --font-sans-1: Lato;
+  --font-sans-2: Noto Sans;
+  color: var(--font-color-dark);
   _background-color: var(--background-color-light);
   --font-color-dark: #161b33;
   --font-color-light: #f1dac4;
@@ -18,7 +55,7 @@ html {
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: 0.5fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 2fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr 1fr 1fr 2fr 0.5fr;
   gap: 0px 0px;
   grid-template-areas:
     "header header header"
@@ -42,8 +79,9 @@ html {
   grid-area: nav;
 }
 .article-heading {
-  border-radius: border-box;
+  box-sizing: border-box;
   height: 3rem;
+  text-decoration: underline;
 }
 
 .colors {
@@ -67,6 +105,8 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
+  top: 2rem;
 }
 
 .first-color {
@@ -76,7 +116,7 @@ html {
   width: 4rem;
   height: 4rem;
   padding: 3rem;
-  margin: 1rem;
+  margin-right: 1rem;
 }
 
 .second-color {
@@ -86,6 +126,7 @@ html {
   width: 4rem;
   height: 4rem;
   padding: 3rem;
+  margin-right: 1rem;
 }
 
 .third-color {
@@ -95,7 +136,7 @@ html {
   width: 4rem;
   height: 4rem;
   padding: 3rem;
-  margin: 1rem;
+  margin-right: 1rem;
 }
 
 .fourth-color {
@@ -105,25 +146,61 @@ html {
   width: 3rem;
   height: 4rem;
   padding: 3rem;
-  margin: 1rem;
+  margin-right: 1rem;
 }
 
 .fifth-color {
   background-color: var(--font-color-accent-cold);
   color: var(--background-color-light);
   text-align: center;
-  width: 4rem;
+  width: 3rem;
   height: 4rem;
   padding: 3rem;
-  margin: 1rem;
+  margin-right: 1rem;
 }
 
 .fonts {
   grid-area: fonts;
+  display: flex;
+  flex-direction: row;
 }
+
+.first-font {
+  font-family: var(--font-sans-1);
+  margin: 1rem;
+  justify-content: center;
+  align-self: center;
+}
+
+.second-font {
+  font-family: var(--font-sans-2);
+  margin: 1rem;
+  justify-content: center;
+  align-self: center;
+}
+
 .text-style {
   grid-area: text-style;
 }
+
+.cnt-text-style {
+  display: flex;
+  flex-direction: row;
+}
+
+.first-text-style-block {
+  align-self: center;
+  margin-left: 1rem;
+  font-family: var(--font-sans-1);
+}
+
+.second-text-style-block {
+  justify-content: flex-end;
+  align-self: center;
+  margin-left: 1rem;
+  font-family: var(--font-sans-2);
+}
+
 .buttons {
   grid-area: buttons;
 }
@@ -216,6 +293,7 @@ html {
 .darkmode {
   grid-area: darkmode;
 }
+
 .footer {
   grid-area: footer;
 }
